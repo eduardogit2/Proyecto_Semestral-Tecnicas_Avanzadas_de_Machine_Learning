@@ -1,0 +1,35 @@
+# Ignorar todo el contenido de la carpeta data
+data/*
+
+# Mantener el archivo para conservar la estructura en el repo
+!data/.gitkeep
+
+# Archivos comprimidos 
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# imagenes
+*.png
+*.jpg
+*.jpeg
+*.mat
+
+# Python y Entornos
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDEs y Sistema Operativo
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
