@@ -12,12 +12,6 @@ data/*
 *.rar
 *.7z
 
-# imagenes
-*.png
-*.jpg
-*.jpeg
-*.mat
-
 # Python y Entornos
 __pycache__/
 *.py[cod]

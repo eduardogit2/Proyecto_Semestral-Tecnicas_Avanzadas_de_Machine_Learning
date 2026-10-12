@@ -1,0 +1,18 @@
+                   precision    recall  f1-score   support
+
+       Abyssinian       0.21      0.20      0.21        40
+           Bengal       0.44      0.60      0.51        40
+           Birman       0.57      0.20      0.30        40
+           Bombay       0.56      0.95      0.71        37
+British_Shorthair       0.34      0.42      0.38        40
+     Egyptian_Mau       0.64      0.24      0.35        38
+       Maine_Coon       0.38      0.25      0.30        40
+          Persian       0.45      0.23      0.30        40
+          Ragdoll       0.44      0.35      0.39        40
+     Russian_Blue       0.50      0.12      0.20        40
+          Siamese       0.31      0.50      0.38        40
+           Sphynx       0.17      0.38      0.23        40
+
+         accuracy                           0.37       475
+        macro avg       0.42      0.37      0.35       475
+     weighted avg       0.42      0.37      0.35       475
