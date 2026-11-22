@@ -1,43 +1,52 @@
 # Clasificación de razas de gatos con redes neuronales
 
-**TLY1102 Técnicas de Machine Learning I** (Duoc UC) · **Grupo 7:** Agustín Fernández · Sebastián Salgado · Eduardo Uribe
+**TLY1102 – Técnicas de Machine Learning I (Duoc UC)**  
+**Grupo 7:** Agustín Fernández · Sebastián Salgado · Eduardo Uribe
 
 ## Descripción
 
-Este proyecto aborda un problema de clasificación de imágenes: a partir de una fotografía, identificar la raza de un gato. Se trabaja con 12 razas del Oxford-IIIT Pet Dataset, y se utilizan distintos tipos de redes neuronales para resolverlo y compararlos.
+Este proyecto busca identificar la raza de un gato a partir de una imagen. Para ello, trabajamos con 12 razas del **Oxford-IIIT Pet Dataset** y desarrollamos distintos modelos de redes neuronales.
 
-El problema es de grano fino, porque varias razas comparten color, tamaño y rasgos faciales, así que las diferencias relevantes están en detalles de textura y forma.
+Se trata de un problema de clasificación de grano fino, ya que algunas razas presentan características visuales similares, como el color del pelaje, la forma del rostro y la textura.
 
-## Enfoque
+## Desarrollo del proyecto
 
-El proyecto explora cómo distintas arquitecturas de redes neuronales enfrentan el mismo problema:
+A lo largo de las evaluaciones del curso, exploramos y comparamos dos arquitecturas:
 
-- **Perceptrón Multicapa (MLP):** trabaja con la imagen aplanada en un vector, lo que elimina la relación espacial entre píxeles.
-- **Redes Neuronales Convolucionales (CNN):** conservan la estructura de la imagen y aprenden filtros locales que extraen características jerárquicas, desde bordes hasta partes del animal.
+- **Perceptrón Multicapa (MLP):** procesa las imágenes como vectores de píxeles.
+- **Red Neuronal Convolucional (CNN):** aprovecha la estructura espacial de las imágenes para aprender características visuales.
 
-Para cada modelo se revisan las métricas de clasificación, el comportamiento durante el entrenamiento, los errores y la interpretabilidad, mediante Feature Maps, etc.
+El trabajo incluye preparación y exploración de datos, entrenamiento, evaluación, regularización y optimización de los modelos. También analizamos sus errores y utilizamos herramientas de interpretabilidad, como mapas de características, Grad-CAM y mapas de saliencia.
+
+Los experimentos, resultados, gráficos y conclusiones de cada etapa se encuentran documentados en los notebooks y en los informes del repositorio.
 
 ## Datos
 
-- Imágenes de gatos de 12 razas, redimensionadas a 64 × 64 píxeles en RGB y normalizadas al rango [0, 1].
-- Partición en entrenamiento, validación y prueba, con la misma semilla en todo el proyecto para que los resultados sean comparables.
-- El conjunto de datos se descarga automáticamente al ejecutar los notebooks.
+- **Origen:** Oxford-IIIT Pet Dataset, utilizando las imágenes de 12 razas de gatos.
+- **Formato de entrada:** imágenes RGB de 64 × 64 píxeles.
+- **Preprocesamiento:** normalización de los valores de píxeles al rango [0, 1].
+- **Evaluación:** particiones de entrenamiento, validación y prueba.
+
+El conjunto de datos se descarga automáticamente cuando se ejecutan los notebooks que lo requieren, siempre que exista conexión a internet.
 
 ## Estructura del repositorio
 
-```
+```text
 .
 ├── README.md
-├── data/        # Dataset (se descarga al ejecutar los notebooks)
-├── notebooks/   # Notebooks con el desarrollo
-├── models/      # Modelos entrenados
-├── images/      # Figuras y resultados
-└── docs/        # Informes técnicos
+├── data/          # Dataset y archivos de datos
+├── docs/          # Informes y documentación
+├── images/        # Gráficos y visualizaciones
+├── models/        # Modelos entrenados
+├── notebooks/     # Desarrollo de las evaluaciones
+└── reportes/      # Tablas y resultados exportados
 ```
+
+Algunas carpetas se crean automáticamente durante la ejecución, si aún no existen.
 
 ## Requisitos
 
-Python con las siguientes librerías (los notebooks se desarrollaron con TensorFlow 2.21.0):
+El proyecto utiliza **Python**, **TensorFlow/Keras** y librerías para el análisis y la visualización de datos.
 
 ```bash
 pip install tensorflow numpy pandas matplotlib seaborn scikit-learn jupyter
@@ -45,15 +54,19 @@ pip install tensorflow numpy pandas matplotlib seaborn scikit-learn jupyter
 
 ## Ejecución
 
-Los notebooks deben ejecutarse desde la carpeta `notebooks/`, porque las rutas son relativas. La primera ejecución requiere conexión a internet, ya que el dataset y algunos modelos se descargan automáticamente si no existen localmente.
+1. Clona o descarga el repositorio.
+2. Abre el proyecto en VS Code o Jupyter Notebook.
+3. Abre el notebook que quieras revisar dentro de `notebooks/`.
+4. Ejecuta sus celdas en orden y sigue las indicaciones de cada evaluación.
 
-Las semillas están fijadas en 29, por lo que los resultados son reproducibles con la misma versión de TensorFlow.
+Los notebooks más recientes están configurados para utilizar las carpetas principales del proyecto al ejecutarse desde la raíz del repositorio o desde `notebooks/`.
 
+El entrenamiento puede tardar según el equipo utilizado. Las semillas ayudan a reproducir los experimentos, pero algunos resultados pueden variar ligeramente entre entornos.
 
 ## Matriz de responsabilidades
 
 | Integrante | Tareas realizadas |
 |---|---|
-| **Agustín Fernández** | Preparación de datos, lógica de extracción del dataset, validación de normalización y EDA |
-| **Sebastián Salgado** | Diseño e implementación de la arquitectura CNN, visualización de Feature Maps |
-| **Eduardo Uribe** | Entrenamiento, evaluación comparativa CNN vs MLP (E1), análisis Grad-CAM y redacción final |
+| **Agustín Fernández** | Preparación de datos, extracción del dataset, validación de normalización y análisis exploratorio. |
+| **Sebastián Salgado** | Diseño e implementación de la CNN y visualización de mapas de características. |
+| **Eduardo Uribe** | Entrenamiento, evaluación comparativa de MLP y CNN, análisis Grad-CAM y documentación final. |

@@ -1,0 +1,31 @@
+{
+  "nombre": "MLP final",
+  "tipo_modelo": "MLP",
+  "regularizacion": true,
+  "tecnicas": [
+    "EarlyStopping",
+    "Data Augmentation",
+    "Batch Normalization"
+  ],
+  "hp": {
+    "filtros": [
+      16,
+      32,
+      64
+    ],
+    "neuronas": 128,
+    "capas_mlp": [
+      128,
+      64
+    ],
+    "learning_rate": 0.0005,
+    "batch_size": 32,
+    "dropout_conv": 0.25,
+    "dropout_dense": 0.5,
+    "l1": 1e-05,
+    "l2": 0.0001,
+    "patience": 5
+  },
+  "epochs": 30,
+  "semilla": 29
+}
